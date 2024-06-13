@@ -100,13 +100,13 @@ https://pull-cdnw.anystream.uk/live/cf46c8b0018c10009acded4c00000000/playlist.m3
 
 
 #EXTINF:-1 group-title="BANGLADESH" tvg-logo="https://i.postimg.cc/mg15t8NJ/images-1-4.png",BTV National 
-http://xtv.ooo:8080/live/mahendra44/mhnd1234/245930.m3u8
+http://lifetvbd.xyz:8080/live/12345/12345/74.ts
 
 #EXTINF:-1 group-title="BANGLADESH" tvg-logo="https://i.imgur.com/eJS0vGk.jpg",BTV World
-http://xtv.ooo:8080/live/mahendra44/mhnd1234/245922.m3u8
+http://lifetvbd.xyz:8080/live/12345/12345/75.ts
 
 #EXTINF:-1 group-title="BANGLADESH" tvg-logo="https://i.imgur.com/r2YjB0s.png",BTV Chottogram 
-http://cdn01.palki.tv/live/BTVChattogram-M/tracks-v1a1/mono.m3u8
+http://lifetvbd.xyz:8080/live/12345/12345/256.ts
 
 #EXTINF:-1 group-title="BANGLADESH" tvg-logo="https://i.imgur.com/8nRyyAu.png",Sangsad Tv
 http://cdn01.palki.tv/live/SangsadTV-M/index.m3u8
