@@ -333,16 +333,6 @@ http://xtv.ooo:8080/live/415663775/826262627/221260.ts
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg8H3YlBtOHF-1vxmzmn5r9hbOum61opRtbA&usqp=CAU",& Picture HD
 http://195.26.87.217/live.ts?channelId=139&uid=7435&deviceMac=00:1A:79:51:4B:3A
 
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.postimg.cc/BZ1gnMYG/images-5-11.jpg",&xplorHD
-
-
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Colors_TV_logo.svg/1200px-Colors_TV_logo.svg.png",Colors
-https://fifabangladesh.live/@RANAPKX73/stream.m3u8?id=1368&e=.m3u8
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzniVE-o64NED0SWDE72oZcqqn8hxh8pgPGg&usqp=CAU",Colors HD
-https://fifabangladesh.live/@RANAPKX73/stream.m3u8?id=144&e=.m3u8
-
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/h86708M.png",Colors Rishtey HD
 http://195.26.87.217/live.ts?channelId=158&uid=7435&deviceMac=00:1A:79:51:4B:3A
 
@@ -383,41 +373,14 @@ http://xtv.ooo:8080/adnankb2006/86057314/221257
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqG3yBIlXqLMpw8rgS_AynI4fGWfll0bHVGIoO2e3TVUC9nTiwo5bLiyQ&s=10",Star Gold Romance
 http://mixbix.xyz:8080/KSy2nGA55PRa/fsFCLPFmryvP/236827
 
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/SyDPLgu.png",Star Ustav
-
-
-
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/7VRBdee.png",Brat Tv
-
-
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/de/Sony_TV_new.png",Sony Tv HD
-http://mixbix.xyz:8080/KSy2nGA55PRa/fsFCLPFmryvP/239403
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/de/Sony_TV_new.png",Sony Tv FHD
-http://tv.cloudcdn.me:80/live.ts?channelId=193&uid=1868&deviceMac=00:1A:79:94:98:FE
-
 #EXTINF:-1 tvg-id="" tvg-name="SONY MAX" tvg-logo="https://i.ibb.co/q9Nwjh0/Picsart-23-06-07-12-58-14-641.png" group-title="INDIAN", SONY MAX
 http://mixbix.xyz:8080/KSy2nGA55PRa/fsFCLPFmryvP/236924
 
 #EXTINF:-1 tvg-id="" tvg-name="SONY MAX" tvg-logo="https://i.ibb.co/q9Nwjh0/Picsart-23-06-07-12-58-14-641.png" group-title="INDIAN", SONY MAX HD
 http://tv.cloudcdn.me:80/live.ts?channelId=184&uid=1868&deviceMac=00:1A:79:94:98:FE
 
-#EXTINF:-1 tvg-id="" tvg-name="SONY MAX" tvg-logo="https://i.ibb.co/q9Nwjh0/Picsart-23-06-07-12-58-14-641.png" group-title="INDIAN", SONY MAX FHD 
-http://tv.cloudcdn.me:80/live.ts?channelId=184&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-#EXTINF:-1 tvg-id="" tvg-name="SONY MAX" tvg-logo="https://upload.wikimedia.org/wikipedia/en/b/b6/Sony_Max_new.png" group-title="INDIAN", SONY MAX UK
-http://tv.cloudcdn.me:80/live.ts?channelId=186&uid=1868&deviceMac=00:1A:79:94:98:FE
-
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/hi/f/f4/Sony_Max_2_new_logo.png",Sony Max 2
 http://tv.cloudcdn.me:80/live.ts?channelId=183&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY%20PAL.png",Sony Pal
-http://tv.cloudcdn.me:80/live.ts?channelId=188&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/zFJH165.jpg",Sony Kal
-https://spt-sonykal-1-us.lg.wurl.tv/playlist.m3u8
 
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/qanBTkv.png",Sony Sab HD
 http://xtv.ooo:8080/live/467899872/875785779/66174.ts
@@ -427,22 +390,6 @@ http://tv.cloudcdn.me:80/live.ts?channelId=260&uid=13556&deviceMac=00:1A:79:AB:D
 
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/ADXlju2.png",Sony WAH
 http://tv.cloudcdn.me:80/live.ts?channelId=187&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Zee_TV_Logo_2017.svg/2560px-Zee_TV_Logo_2017.svg.png",Zee Tv HD
-http://tv.cloudcdn.me:80/live.ts?channelId=217&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/a/a3/Zee_Anmol_logo.png",Zee Anmol HD
-http://tv.cloudcdn.me:80/live.ts?channelId=208&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b4/Zee_Anmol_Cinema_logo.png",Zee Anmol Cinema HD
-http://tv.cloudcdn.me:80/live.ts?channelId=209&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/5b/Zee_bollywood_21AUg2018.jpg/revision/latest?cb=20191214174432",Zee Bollywood HD
-http://tv.cloudcdn.me:80/live.ts?channelId=210&uid=1868&deviceMac=00:1A:79:94:98:FE
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://upload.wikimedia.org/wikipedia/en/a/a4/Zee_Action_2023_logo.png",Zee Action HD
-http://tv.cloudcdn.me:80/live.ts?channelId=207&uid=1868&deviceMac=00:1A:79:94:98:FE
 
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzcZtadM4RSjBp7JZF49VWdOzCL8rWejgLKZ1spZvGk2-xKhc7TziwEjVK&s=10",Zee Cinema HD
 http://tv.cloudcdn.me:80/live.ts?channelId=12359&uid=1868&deviceMac=00:1A:79:94:98:FE
