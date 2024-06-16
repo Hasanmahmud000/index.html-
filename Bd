@@ -539,7 +539,7 @@ https://i.mjh.nz/SamsungTVPlus/ATBA3300007PT.m3u8
 https://varun-iptv.netlify.app/m3u/discoverybengali.m3u8
 
 #EXTINF:-1 group-title="DOCUMENTARY" tvg-logo="https://i.imgur.com/g7I8nnR.png",National Geographic 
-https://tgaadi-web.tech/trex.php?tv=155772
+http://lifetvbd.xyz:8080/live/12345/12345/2065.m3u8
 
 #EXTINF:-1 group-title="DOCUMENTARY" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6_wcNQwFs2xvFpmoKckq4U0HIeXGPC2jm-YGha5GTVw&s",Animal Planet
 https://varun-iptv.netlify.app/m3u/Animal_Planet.m3u8
@@ -548,7 +548,7 @@ https://varun-iptv.netlify.app/m3u/Animal_Planet.m3u8
 https://wildearth-roku.amagi.tv/masterR720P.m3u8
 
 #EXTINF:-1 group-title="DOCUMENTARY" tvg-logo="https://cloudtv.akamaized.net/anyott/images/CMS_BD/62bf69b2-7839-4177-a3a8-7002505913e9_180x180_SonyBBCEarth.jpg",BBC Earth HD
-https://tgaadi-web.tech/trex.php?tv=156012
+http://lifetvbd.xyz:8080/play/sfDLG_2a-o-zPZtPnk8IJUdWg3tXKgoif8ASZAkYUms/.m3u8
 
 #EXTINF:-1 group-title="DOCUMENTARY" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy_AMqR4xkCe6AxrRVfb2K38qiMcoRh7FUVEByNfE-e44Tf3-5H7NVieXj&s=10",Discovery Science
 https://dplus.gammacdn.workers.dev/videos/96.m3u8
@@ -590,20 +590,3 @@ https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Sangeetbhojpuri/default/sangeetbhoj
 
 #EXTINF:-1 group-title="MUSIC" tvg-logo="https://i.ibb.co/4JKq09m/Picsart-23-06-07-11-49-33-298.png",Sangeet Bangla
 https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Sangeetbangla/default/sangeetbangla-audio_208482_und=208000-video=2137600.m3u8
-
-
-
-
-
-#EXTINF:-1 group-title="MOVIE" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP3LwYYn2G8ozyw_illzTDlbg8IP4CmxtVcw&s",Movie Club
-https://cc-jytb1qhmgqh5a.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-jytb1qhmgqh5a/playlist.m3u8
-
-
-#EXTINF:-1 group-title="MOVIE" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn0zp2Zzf9cphO12N4etvDNjIJbsJS5ffFnQ&usqp=CAU",Bangla Movie
-http://tv.mototvlive.net:8880/live/1256%40%23zx/1256%40%23zxv/16569.ts
-
-#EXTINF:1 group-title="MOVIE" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7br8NUaqi0f2qgYrFGFqPumOEvhXV7ouh-w&s",Hindi Movie 
-http://tv.mototvlive.net:8880/live/1256%40%23zx/1256%40%23zxv/16568.ts
-
-#EXTINF:-1 group-title="MOVIE" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR30jFD6NhLc_zAryHh700Rf7oiZEvSrLQmQqcvTLUgZ54WbnW7VYKDqPI&s=10",Bangla Natok 
-http://tv.mototvlive.net:8880/live/1256%40%23zx/1256%40%23zxv/16572.ts
