@@ -530,10 +530,15 @@ http://tv.cloudcdn.me:80/live.ts?channelId=301&uid=3960&deviceMac=00:1A:79:09:AC
 http://tv.cloudcdn.me:80/live.ts?channelId=302&uid=3960&deviceMac=00:1A:79:09:AC:16
 
 #EXTINF:-1 group-title="SPORTS" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdy4C4g5PPu91tbSZN9lgejySS9S5GhO04BThHfQpH&s",Willow Cricket Extra
-http://tv.cloudcdn.me:80/live.ts?channelId=287&uid=3960&deviceMac=00:1A:79:09:AC:16
+http://tv.mototvlive.net:8880/live/1256%40%23zx/1256%40%23zxv/4613.m3u8
 
 #EXTINF:-1 tvg-logo="https://www.cabletv.com/app/uploads/fifa-plus-logo-small.png" group-title="SPORTS", FIFA Plus
 https://i.mjh.nz/SamsungTVPlus/ATBA3300007PT.m3u8
+
+
+
+
+
 
 #EXTINF:-1 group-title="DOCUMENTARY" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYgRc1lrUmKeVJj7_85fqp-81xHzGuKGsGQ&usqp=CAU",Discovery Bangla
 https://varun-iptv.netlify.app/m3u/discoverybengali.m3u8
