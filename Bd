@@ -538,7 +538,7 @@ https://varun-iptv.netlify.app/m3u/Animal_Planet.m3u8
 https://wildearth-roku.amagi.tv/masterR720P.m3u8
 
 #EXTINF:-1 group-title="DOCUMENTARY" tvg-logo="https://cloudtv.akamaized.net/anyott/images/CMS_BD/62bf69b2-7839-4177-a3a8-7002505913e9_180x180_SonyBBCEarth.jpg",BBC Earth HD
-http://lifetvbd.xyz:8080/play/sfDLG_2a-o-zPZtPnk8IJUdWg3tXKgoif8ASZAkYUms/.m3u8
+http://tv.mototvlive.net:8880/live/1256%40%23zx/1256%40%23zxv/2307.ts
 
 #EXTINF:-1 group-title="DOCUMENTARY" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy_AMqR4xkCe6AxrRVfb2K38qiMcoRh7FUVEByNfE-e44Tf3-5H7NVieXj&s=10",Discovery Science
 https://dplus.gammacdn.workers.dev/videos/96.m3u8
