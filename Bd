@@ -324,9 +324,6 @@ https://live-stream.utkalbongo.com/utkalbongo/stream2/hls/amarbanglatwolivestrea
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Ptbe3BcipeORtycnVC0qdsq6w_DMcDngWN7XEFEt&s",& Tv
 http://tv.cloudcdn.me:80/live.ts?channelId=140&uid=1868&deviceMac=00:1A:79:94:98:FE
 
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Yy5LOXMMyH6bO-E3Gx-YC45CBDTAr8GeEl4iW3MA7NRfkI180pyHxAY&s=10",& Picture
-http://xtv.ooo:8080/live/415663775/826262627/221260.ts
-
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg8H3YlBtOHF-1vxmzmn5r9hbOum61opRtbA&usqp=CAU",& Picture HD
 http://195.26.87.217/live.ts?channelId=139&uid=7435&deviceMac=00:1A:79:51:4B:3A
 
@@ -381,9 +378,6 @@ http://tv.cloudcdn.me:80/live.ts?channelId=183&uid=1868&deviceMac=00:1A:79:94:98
 
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/qanBTkv.png",Sony Sab HD
 http://xtv.ooo:8080/live/467899872/875785779/66174.ts
-
-#EXTINF:-1 group-title="INDIAN" tvg-logo="https://1000logos.net/wp-content/uploads/2023/01/Sony-SAB-logo.png",Sony Sab FHD
-http://tv.cloudcdn.me:80/live.ts?channelId=260&uid=13556&deviceMac=00:1A:79:AB:DF:A6
 
 #EXTINF:-1 group-title="INDIAN" tvg-logo="https://i.imgur.com/ADXlju2.png",Sony WAH
 http://tv.cloudcdn.me:80/live.ts?channelId=187&uid=1868&deviceMac=00:1A:79:94:98:FE
