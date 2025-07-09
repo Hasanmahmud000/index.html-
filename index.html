@@ -1,139 +1,141 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  
-  <title>CricStreamZone - Live Matches & Upcoming</title>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>  
-  <style>  
-    .menu-dropdown {  
-      position: relative;  
-      display: inline-block;  
-    }  
-    
-    .menu-toggle {  
-      background: none;  
-      border: none;  
-      font-size: 22px;  
-      color: #fff;  
-      cursor: pointer;  
-      padding: 5px;  
-      margin-left: 0px;  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CricStreamZone - Live Matches & Upcoming</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <style>
+    /* Existing styles... */
+
+    .menu-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: #fff;
+      cursor: pointer;
+      padding: 5px;
+      margin-left: 0px;
       margin-right: 20px;
     }
-    
-    .dropdown-content {  
-      display: none;  
-      position: absolute;  
-      right: 0;  
-      top: 30px;  
-      background-color: #222;  
-      box-shadow: 0 4px 8px rgba(0,0,0,0.7);  
-      border-radius: 8px;  
-      z-index: 1001;  
-      overflow: hidden;  
-      min-width: 180px;  
-    }  
-    
-    .dropdown-content a {  
-      color: #fff;  
-      padding: 10px 16px;  
-      display: block;  
-      text-decoration: none;  
-      font-size: 14px;  
-      transition: background 0.3s ease;  
-    }  
-    
-    .dropdown-content a:hover {  
-      background-color: #0af;  
-    }  
-    
-    .menu-dropdown:hover .dropdown-content {  
-      display: block;  
-    }  
 
-    /* Drawer (Side menu) */  
-    #drawer {  
-      position: fixed;  
-      top: 0;  
-      left: -600px;  
-      width: 280px;  
-      height: 100%;  
-      background: #111;  
-      z-index: 2000;  
-      padding: 20px;  
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);  
-      transition: left 0.3s ease;  
-    }  
-    #drawer.open {  
-      left: 0;  
-    }  
-    #drawer h3 {  
-      color: #0af;  
-      margin-bottom: 20px;  
-    }  
-    #drawer a {  
-      display: block;  
-      color: #fff;  
-      text-decoration: none;  
-      margin-bottom: 12px;  
-      padding: 10px;  
-      border-radius: 6px;  
-      transition: background 0.2s ease;  
-      font-weight: 600;  
-      background: #222;  
-    }  
-    #drawer a:hover {  
-      background: #0af;  
-      color: #fff;  
-    }  
-    #drawerClose {  
-      background: none;  
-      color: #ccc;  
-      border: none;  
-      font-size: 22px;  
-      position: absolute;  
-      top: 10px;  
-      right: 15px;  
-      cursor: pointer;  
-    }  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 30px;
+      background-color: #222;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+      border-radius: 8px;
+      z-index: 1001;
+      overflow: hidden;
+      min-width: 180px;
+    }
 
-    /* Backdrop overlay */  
-    #drawerOverlay {  
-      display: none;  
-      position: fixed;  
-      top: 0;  
-      left: 0;  
-      height: 100%;  
-      width: 100%;  
-      background: #00000080;  
-      z-index: 1500;  
-    }  
-    #drawerOverlay.show {  
-      display: block;  
-    }  
+    .dropdown-content a {
+      color: #fff;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
 
-    body {  
-      margin: 0;  
-      background: #111;  
-      color: #fff;  
-      font-family: 'Segoe UI', sans-serif;  
-    }  
-    nav {  
-      background: #222;  
-      padding: 12px 20px;  
-      display: flex;  
-      align-items: center;  
-      justify-content: space-between;  
-    }  
-    .logo {  
-      font-size: 20px;  
-      font-weight: bold;  
-      color: #0ff;  
-    }  
-    
+    .dropdown-content a:hover {
+      background-color: #0af;
+    }
+
+    .menu-dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Drawer (Side menu) */
+    #drawer {
+      position: fixed;
+      top: 0;
+      left: -600px;
+      width: 280px;
+      height: 100%;
+      background: #111;
+      z-index: 2000;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
+      transition: left 0.3s ease;
+    }
+    #drawer.open {
+      left: 0;
+    }
+    #drawer h3 {
+      color: #0af;
+      margin-bottom: 20px;
+    }
+    #drawer a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+      font-weight: 600;
+      background: #222;
+    }
+    #drawer a:hover {
+      background: #0af;
+      color: #fff;
+    }
+    #drawerClose {
+      background: none;
+      color: #ccc;
+      border: none;
+      font-size: 22px;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+    }
+
+    /* Backdrop overlay */
+    #drawerOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #00000080;
+      z-index: 1500;
+    }
+    #drawerOverlay.show {
+      display: block;
+    }
+
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    nav {
+      background: #222;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #0ff;
+    }
+
     /* Search Container - Mobile Fixed */
-    .search-container {  
+    .search-container {
       position: relative;
       display: flex;
       align-items: center;
@@ -235,7 +237,7 @@
         font-size: 18px;
         padding: 10px;
       }
-      
+
       .search-input {
         font-size: 16px;
         -webkit-appearance: none;
@@ -243,7 +245,7 @@
         -webkit-user-select: text;
         user-select: text;
       }
-      
+
       .search-input:focus {
         outline: none;
         border-bottom: 2px solid #0ff;
@@ -258,11 +260,11 @@
       }
     }
 
-    .notice {  
+    .notice {
       background: #000;
-      color: #fff;  
-      padding: 05px 0;  
-      font-weight: bold;  
+      color: #fff;
+      padding: 05px 0;
+      font-weight: bold;
       text-align: center;
       border-top: 1px solid #fff;
       border-bottom: 1px solid #fff;
@@ -273,8 +275,8 @@
 
     .notice marquee {
       color: #fff;
-    }  
-    
+    }
+
     .server-content {
       background: #222;
       border-radius: 50px;
@@ -317,86 +319,87 @@
       color: #0af;
     }
 
-    /* সাব-ট্যাব স্টাইল */  
-    .sub-tab-btns {  
-      padding: 8px;  
-      text-align: center;  
-      background: #222;  
-    }  
-    .sub-tab-btns button {  
-      margin: 0 6px;  
-      padding: 6px 14px;  
-      border: none;  
-      border-radius: 5px;  
-      background: #333;  
-      color: #fff;  
-      cursor: pointer;  
-      font-weight: 600;  
-      font-size: 14px;  
-      transition: background 0.3s ease;  
-    }  
-    .sub-tab-btns button:hover {  
-      background: #0af;  
-    }  
-    .sub-tab-btns .active {  
-      background: #0af;  
-    }  
+    /* Sub-tab styles */
+    .sub-tab-btns {
+      display: flex; /* Align items in a row */
+      justify-content: center; /* Center the items */
+      padding: 8px;
+      background: #222;
+    }
+    .sub-tab-btns button {
+      margin: 0 6px;
+      padding: 6px 14px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+    .sub-tab-btns button:hover {
+      background: #0af;
+    }
+    .sub-tab-btns .active {
+      background: #0af;
+    }
 
-    /* নিচের বড় ট্যাব স্টাইল */  
-    .bottom-tab-btns {  
-      position: fixed;  
-      bottom: 0;  
-      width: 100%;  
-      background: #222;  
-      display: flex;  
-      justify-content: space-around;  
-      padding: 10px 0;  
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.8);  
-      z-index: 1000;  
-    }  
-    .bottom-tab-btns button {  
-      background: #333;  
-      border: none;  
-      color: #fff;  
-      padding: 12px 20px;  
-      font-size: 16px;  
-      font-weight: 700;  
-      border-radius: 8px;  
-      cursor: pointer;  
-      flex: 1;  
-      margin: 0 8px;  
-      transition: background 0.3s ease;  
-    }  
-    .bottom-tab-btns button.active {  
-      background: #0af;  
-      color: #fff;  
-    }  
-    .bottom-tab-btns button:hover:not(.active) {  
-      background: #555;  
-    }  
+    /* Bottom tab styles */
+    .bottom-tab-btns {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #222;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.8);
+      z-index: 1000;
+    }
+    .bottom-tab-btns button {
+      background: #333;
+      border: none;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      flex: 1;
+      margin: 0 8px;
+      transition: background 0.3s ease;
+    }
+    .bottom-tab-btns button.active {
+      background: #0af;
+      color: #fff;
+    }
+    .bottom-tab-btns button:hover:not(.active) {
+      background: #555;
+    }
 
-    #match-list {  
-      padding: 10px 10px 70px; /* নিচের ট্যাব স্পেস ফাঁকা রাখলাম */  
-    }  
-    
+    #match-list {
+      padding: 10px 10px 70px; /* Keep space for bottom tab */
+    }
+
     /* Match Card - SportzX Style */
-    .match {  
+    .match {
       background: linear-gradient(135deg, #1e1e2e, #2a2a3a);
-      border-radius: 12px;  
-      margin-bottom: 15px;  
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);  
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       overflow: hidden;
       border: 1px solid #333;
-    }  
-    .match:hover {  
-      transform: scale(1.02);  
+    }
+    .match:hover {
+      transform: scale(1.02);
     }
 
     .match-header {
-      background: #000; /* Match Title বক্স কালো */
-      color: #fff; /* লেখা সাদা */
+      background: #000; /* Match Title box black */
+      color: #fff; /* Text white */
       padding: 8px 15px;
       font-size: 13px;
       font-weight: 600;
@@ -429,8 +432,8 @@
     }
 
     .match-time-date {
-      font-size: 12px; /* Today ও Upcoming এর জন্য বড় করা হয়েছে */
-      color: #fff; /* লেখা সাদা */
+      font-size: 12px; /* Increased for Today and Upcoming */
+      color: #fff; /* Text white */
       margin-bottom: 5px;
       font-weight: 600;
     }
@@ -498,23 +501,23 @@
     }
 
     .countdown-text {
-      font-size: 14px; /* বড় করা হয়েছে */
-      color: #fff; /* সাদা কালার */
+      font-size: 14px; /* Increased */
+      color: #fff; /* White color */
       font-weight: 600;
     }
 
     /* Live Timer Style */
     .live-timer {
       font-size: 15px;
-      color: #fff; /* সাদা কালার */
+      color: #fff; /* White color */
       font-weight: 600;
       font-family: 'Courier New', monospace;
     }
 
     /* Day Name Style for Upcoming */
     .day-name {
-      font-size: 14px; /* বড় করা হয়েছে */
-      color: #fff; /* সাদা কালার */
+      font-size: 14px; /* Increased */
+      color: #fff; /* White color */
       font-weight: 700;
     }
 
@@ -528,28 +531,28 @@
       border-radius: 8px;
     }
 
-    .liveBlink {  
-      display: inline-block;  
-      padding: 4px 8px;  
-      font-weight: 900;  
-      font-size: 9px;  
-      color: white;  
-      background: linear-gradient(45deg, #ff003c, #ff7700, #ff003c);  
-      background-size: 200% 200%;  
-      border-radius: 15px;  
-      animation: gradientPulse 3s ease infinite, blinkOpacity 1.5s infinite;  
-      box-shadow: 0 0 8px #ff003c;  
-      user-select: none;  
-      text-transform: uppercase;  
-    }  
-    @keyframes blinkOpacity {  
-      0%, 100% { opacity: 1; }  
-      50% { opacity: 0.3; }  
-    }  
-    @keyframes gradientPulse {  
-      0% { background-position: 0% 50%; }  
-      50% { background-position: 100% 50%; }  
-      100% { background-position: 0% 50%; }  
+    .liveBlink {
+      display: inline-block;
+      padding: 4px 8px;
+      font-weight: 900;
+      font-size: 9px;
+      color: white;
+      background: linear-gradient(45deg, #ff003c, #ff7700, #ff003c);
+      background-size: 200% 200%;
+      border-radius: 15px;
+      animation: gradientPulse 3s ease infinite, blinkOpacity 1.5s infinite;
+      box-shadow: 0 0 8px #ff003c;
+      user-select: none;
+      text-transform: uppercase;
+    }
+    @keyframes blinkOpacity {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes gradientPulse {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Server List Modal */
@@ -638,42 +641,42 @@
       color: #000;
     }
 
-    /* TV & FM আলাদা সেকশন */  
-    #tv-section, #fm-section {  
-      padding: 10px;  
-      font-size: 16px;  
-      color: #ccc;  
-      text-align: center;  
-    }  
-  </style>  
-</head>  
-<body>  
+    /* TV & FM separate section */
+    #tv-section, #fm-section {
+      padding: 10px;
+      font-size: 16px;
+      color: #ccc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
 
-<!-- Drawer / Side Menu -->  
-<div id="drawer">  
-  <button id="drawerClose" onclick="toggleDrawer()">✕</button>  
-  
+<!-- Drawer / Side Menu -->
+<div id="drawer">
+  <button id="drawerClose" onclick="toggleDrawer()">✕</button>
+
   <!-- Logo Section with Image -->
   <div style="text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #333;">
     <img src="https://i.postimg.cc/3rPWWckN/icon-192.png" alt="CricStreamZone Logo" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px; border: 3px solid #0af;" />
     <div style="color: #888; font-size: 12px;">All Sports Live Streaming</div>
   </div>
-  
-  <h3></h3>  
-  <a href="https://t.me/CricStreamZone" target="_blank">📣 Join Telegram</a>  
-  <a href="https://play.google.com/store/apps/details?id=com.genuine.leone" target="_blank">📲 Download NS Player</a>  
-  <a href="#" onclick="showCategory('live'); toggleDrawer();">🏏 Live Matches</a>  
-  <a href="#" onclick="showCategory('tv'); toggleDrawer();">📺 Live TV</a>  
-  <a href="#" onclick="showCategory('fm'); toggleDrawer();">📻 FM Radio</a>  
-</div>  
+
+  <h3></h3>
+  <a href="https://t.me/CricStreamZone" target="_blank">📣 Join Telegram</a>
+  <a href="https://play.google.com/store/apps/details?id=com.genuine.leone" target="_blank">📲 Download NS Player</a>
+  <a href="#" onclick="showCategory('live'); toggleDrawer();">🏏 Live Matches</a>
+  <a href="#" onclick="showCategory('tv'); toggleDrawer();">📺 Live TV</a>
+  <a href="#" onclick="showCategory('fm'); toggleDrawer();">📻 FM Radio</a>
+</div>
 <div id="drawerOverlay" onclick="toggleDrawer()"></div>
 
-<nav>  
+<nav>
   <div style="display: flex; align-items: center;">
     <button onclick="toggleDrawer()" class="menu-toggle">☰</button>
     <div class="logo">CricStreamZone</div>
   </div>
-  <div class="search-container">  
+  <div class="search-container">
     <button class="search-icon" onclick="toggleSearch()">🔍</button>
   </div>
 
@@ -681,86 +684,85 @@
   <div id="searchOverlay" class="search-overlay" onclick="closeSearch()"></div>
   <input id="search" class="search-input" type="text" placeholder="Search matches, teams..." autocomplete="off" />
   <button class="search-close" onclick="closeSearch()">✕</button>
-</nav>  
-  
-<div class="notice">  
-  <marquee scrollamount="3">Welcome to CricStreamZone! ⚠️ Install NS Player for smooth streaming 📲 Join our Telegram for updates!</marquee>  
-</div>  
-  
-<!-- সাব-ট্যাব শুধুমাত্র Live Category তে দেখাবে -->  
-<div id="subTabs" class="sub-tab-btns" style="display:none;">  
-  <button id="subLive" class="active">Live <span id="countLive"></span></button>  
-  <button id="subToday">Today <span id="countToday"></span></button>  
-  <button id="subUpcoming">Upcoming <span id="countUpcoming"></span></button>  
-  <button id="subFinished">Finished <span id="countFinished"></span></button>  
-</div>  
-  
-<div id="match-list"></div>  
-  
-<!-- TV এবং FM সেকশন -->  
-<div id="tv-section" style="display:none;">  
-  <h2>Live TV Channels</h2>  
-    <p>TV Channel 1 - Link, TV Channel 2 - Link ... (এখানে TV এর লিংক দেখাবে)</p>  
-</div>  
-  
-<div id="fm-section" style="display:none;">  
-  <h2>FM Radio Stations</h2>  
-  <p>FM Station 1 - Link, FM Station 2 - Link ... (এখানে FM এর লিংক দেখাবে)</p>  
-</div>  
+</nav>
+
+<div class="notice">
+  <marquee scrollamount="3">Welcome to CricStreamZone! ⚠️ Install NS Player for smooth streaming 📲 Join our Telegram for updates!</marquee>
+</div>
+
+<!-- Sub-tabs only visible in Live Category -->
+<div id="subTabs" class="sub-tab-btns" style="display:none;">
+  <button id="subLive" class="active">Live <span id="countLive"></span></button>
+  <button id="subToday">Today <span id="countToday"></span></button>
+  <button id="subUpcoming">Upcoming <span id="countUpcoming"></span></button>
+  <button id="subFinished">Finished <span id="countFinished"></span></button>
+</div>
+
+<div id="match-list"></div>
+
+<!-- TV and FM section -->
+<div id="tv-section" style="display:none;">
+  <h2>Live TV Channels</h2>
+  <p>TV Channel 1 - Link, TV Channel 2 - Link ... (এখানে TV এর লিংক দেখাবে)</p>
+</div>
+
+<div id="fm-section" style="display:none;">
+  <h2>FM Radio Stations</h2>
+  <p>FM Station 1 - Link, FM Station 2 - Link ... (এখানে FM এর লিংক দেখাবে)</p>
+</div>
 
 <!-- Server Modal -->
 <div id="serverModal" class="server-modal" onclick="closeServerModal()">
   <div class="server-content" onclick="event.stopPropagation();">
+    <div style="color: #fff; margin-bottom: 10px;">Multiple Links Available</div>
     <div id="serverList" class="server-list" style="text-align: center;">
       <!-- Server links will be populated here -->
     </div>
   </div>
 </div>
-  
-<!-- নিচের বড় ৪টা ট্যাব -->  
-<div class="bottom-tab-btns">  
-  <button id="bottomLive" class="active">  
-    <img src="https://i.postimg.cc/BvWg87Rd/videocam-24dp-E3-E3-E3-FILL0-wght400-GRAD0-opsz24.png" alt="Live Icon" style="vertical-align: middle; margin-right: 6px;" />  
-    Live  
-  </button>  
-  <button id="bottomTV">  
-    <img src="https://i.postimg.cc/K8JDvvxs/live-tv-24dp-E3-E3-E3-FILL0-wght400-GRAD0-opsz24.png" alt="TV Icon" style="vertical-align: middle; margin-right: 6px;" />  
-    TV  
-  </button>  
-  <button id="bottomFM">  
-    <img src="https://i.postimg.cc/YC472jwd/radio-24dp-E3-E3-E3-FILL0-wght400-GRAD0-opsz24.png" alt="FM Icon" style="vertical-align: middle; margin-right: 6px;" />  
-    FM  
-  </button>  
-</div>  
 
-<!-- Telegram Join Popup -->  
-<div id="telegramPopup" style="display:none;">  
-  <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000000aa; z-index:9999; display:flex; align-items:center; justify-content:center;">  
-    <div style="background:#222; padding:20px 25px; border-radius:12px; max-width:90%; width:340px; text-align:center; box-shadow:0 0 10px #000;">  
-      <h3 style="color:#0af; margin-bottom:10px;">📣 Join Our Telegram</h3>  
-      <p style="color:#ccc; font-size:14px;">🔔 For live match updates, instant scores, and exclusive stream links —  
-Join our official Telegram channel now!  
-📲 Download the NS Player app for smooth, uninterrupted streaming.</p>  
-      <div style="margin-top:15px;">  
-        <a href="https://t.me/CricStreamZone" target="_blank" style="background:#08f; color:#fff; padding:10px 18px; text-decoration:none; border-radius:8px; display:inline-block; font-weight:600;">Join Now</a>  
-        <button onclick="closeTelegramPopup()" style="margin-left:10px; background:#444; color:#ccc; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Later</button>  
-      </div>  
-    </div>  
-  </div>  
+<!-- Bottom tab buttons -->
+<div class="bottom-tab-btns">
+  <button id="bottomLive" class="active">
+    <img src="https://i.postimg.cc/BvWg87Rd/videocam-24dp-E3-E3-E3-FILL0-wght400-GRAD0-opsz24.png" alt="Live Icon" style="vertical-align: middle; margin-right: 6px;" />
+    Live
+  </button>
+  <button id="bottomTV">
+    <img src="https://i.postimg.cc/K8JDvvxs/live-tv-24dp-E3-E3-E3-FILL0-wght400-GRAD0-opsz24.png" alt="TV Icon" style="vertical-align: middle; margin-right: 6px;" />
+    TV
+  </button>
+  <button id="bottomFM">
+    <img src="https://i.postimg.cc/YC472jwd/radio-24dp-E3-E3-E3-FILL0-wght400-GRAD0-opsz24.png" alt="FM Icon" style="vertical-align: middle; margin-right: 6px;" />
+    FM
+  </button>
 </div>
 
-<script>  
+<!-- Telegram Join Popup -->
+<div id="telegramPopup" style="display:none;">
+  <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000000aa; z-index:9999; display:flex; align-items:center; justify-content:center;">
+    <div style="background:#222; padding:20px 25px; border-radius:12px; max-width:90%; width:340px; text-align:center; box-shadow:0 0 10px #000;">
+      <h3 style="color:#0af; margin-bottom:10px;">📣 Join Our Telegram</h3>
+      <p style="color:#ccc; font-size:14px;">🔔 For live match updates, instant scores, and exclusive stream links — Join our official Telegram channel now! 📲 Download the NS Player app for smooth, uninterrupted streaming.</p>
+      <div style="margin-top:15px;">
+        <a href="https://t.me/CricStreamZone" target="_blank" style="background:#08f; color:#fff; padding:10px 18px; text-decoration:none; border-radius:8px; display:inline-block; font-weight:600;">Join Now</a>
+        <button onclick="closeTelegramPopup()" style="margin-left:10px; background:#444; color:#ccc; padding:10px 18px; border:none; border-radius:8px; cursor:pointer;">Later</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
 // Search functionality - Updated
 function toggleSearch() {
   const searchInput = document.getElementById('search');
   const searchClose = document.querySelector('.search-close');
   const searchOverlay = document.getElementById('searchOverlay');
-  
+
   if (!searchInput.classList.contains('active')) {
     searchOverlay.classList.add('active');
     searchInput.classList.add('active');
     searchClose.classList.add('active');
-    
+
     setTimeout(() => {
       searchInput.focus();
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -776,13 +778,13 @@ function closeSearch() {
   const searchInput = document.getElementById('search');
   const searchClose = document.querySelector('.search-close');
   const searchOverlay = document.getElementById('searchOverlay');
-  
+
   searchOverlay.classList.remove('active');
   searchInput.classList.remove('active');
   searchClose.classList.remove('active');
   searchInput.value = '';
   searchInput.blur();
-  
+
   if(document.getElementById('subTabs').style.display === 'block'){  
     renderMatches(currentSubTab);  
   }
@@ -819,9 +821,9 @@ function toggleDrawer() {
 function openServerModal(servers) {
   const modal = document.getElementById('serverModal');
   const serverList = document.getElementById('serverList');
-  
+
   serverList.innerHTML = '';
-  
+
   if (servers && servers.length > 0) {
     servers.forEach(server => {
       const serverItem = document.createElement('a');
@@ -835,7 +837,7 @@ function openServerModal(servers) {
   } else {
     serverList.innerHTML = '<div style="color:#888; text-align:center; padding:20px;">No servers available</div>';
   }
-  
+
   modal.classList.add('active');
 }
 
@@ -864,7 +866,7 @@ const matchesApi = "https://script.google.com/macros/s/AKfycbxZfHUGsH19x3hZp5eeo
 let matches = [];  
 let intervals = [];  
 let currentSubTab = 'live';
-  
+
 function clearIntervals() {  
   intervals.forEach(i => clearInterval(i));  
   intervals = [];  
@@ -1152,7 +1154,7 @@ function renderMatches(type = 'live') {
         if (now >= endTime && (status === 'live' || status === 'coming_soon')) {
           // Refresh to show in finished category
           setTimeout(() => {
-            renderMatches(currentSubTab);
+            renderMatches('finished'); // Automatically switch to Finished tab
           }, 1000);
         }
       }, 1000));  
@@ -1168,7 +1170,7 @@ function renderMatches(type = 'live') {
   });  
 }  
 
-// নিচের বড় ট্যাব হ্যান্ডলার  
+// Bottom tab handler  
 function showCategory(category) {  
   document.getElementById('bottomLive').classList.remove('active');  
   document.getElementById('bottomTV').classList.remove('active');  
@@ -1197,7 +1199,7 @@ function showCategory(category) {
   }  
 }  
 
-// সাব-ট্যাব হ্যান্ডলার  
+// Sub-tab handler  
 function setActiveSubTab(subTab) {  
   document.getElementById('subLive').classList.remove('active');  
   document.getElementById('subToday').classList.remove('active');   
@@ -1242,7 +1244,7 @@ document.getElementById('search').addEventListener('input', () => {
   }  
 });  
 
-// প্রথমে ডাটা লোড করে Live Category দেখাবে  
+// Initial data load to show Live Category  
 fetch(matchesApi)  
 .then(res => res.json())  
 .then(data => {  
@@ -1573,7 +1575,7 @@ window.addEventListener('online', updateNetworkStatus);
 window.addEventListener('offline', updateNetworkStatus);
 updateNetworkStatus();
 
-</script>  
+</script>
 
-</body>  
+</body>
 </html>
