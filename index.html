@@ -319,31 +319,41 @@
       color: #0af;
     }
 
-    /* Sub-tab styles */
-    .sub-tab-btns {
-      display: flex; /* Align items in a row */
-      justify-content: center; /* Center the items */
-      padding: 8px;
-      background: #222;
-    }
-    .sub-tab-btns button {
-      margin: 0 6px;
-      padding: 6px 14px;
-      border: none;
-      border-radius: 5px;
-      background: #333;
-      color: #fff;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 14px;
-      transition: background 0.3s ease;
-    }
-    .sub-tab-btns button:hover {
-      background: #0af;
-    }
-    .sub-tab-btns .active {
-      background: #0af;
-    }
+ /* Modified sub-tab styles */
+.sub-tab-btns {
+  display: flex;
+  justify-content: center; /* মাঝখানে সাজানোর মূল ম্যাজিক */
+  gap: 8px;
+  padding: 10px;
+  background: #222;
+  flex-wrap: wrap; /* মোবাইল ফ্রেন্ডলি */
+}
+
+.sub-tab-btns button {
+  flex: 1; /* সমান প্রস্থ */
+  min-width: 88px; /* মিনিমাম সাইজ */
+  max-width: 120px; /* ম্যাক্সিমাম সাইজ */
+  padding: 8px 5px;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.sub-tab-btns .active {
+  background: #0af;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,170,255,0.5);
+}
+
 
     /* Bottom tab styles */
     .bottom-tab-btns {
@@ -557,34 +567,29 @@
 
     /* Server List Modal */
     .server-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      z-index: 2000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
 
     .server-modal.active {
       display: flex;
     }
 
     .server-content {
-      background: #222;
-      border-radius: 6px;
-      padding: 12px;
-      max-width: 80%;
-      width: 280px;
-      max-height: 65%;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    background: #000;
+    border: 2px solid #333; /* Outer border */
+    padding: 15px;
+    width: 280px;
+    border-radius: 20px;
+  }
 
     .server-header {
       display: flex;
@@ -596,10 +601,11 @@
     }
 
     .server-title {
-      color: #0af;
-      font-size: 18px;
-      font-weight: 600;
-    }
+    color: #0af;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
 
     .server-close {
       background: none;
@@ -619,27 +625,27 @@
       width: 100%;
     }
 
-    .server-item {
-      background: #333;
-      border: none;
-      color: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: left;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: background 0.3s ease;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 8px;
-      width: 100%;
-    }
-
-    .server-item:hover {
-      background: #0af;
-      color: #000;
-    }
+    .server-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .server-item {
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+    /* Complete removal of inner box styling */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+  }
+  
+  .server-item:hover {
+    background: #333 !important;
+  }
 
     /* TV & FM separate section */
     #tv-section, #fm-section {
@@ -1114,51 +1120,51 @@ function renderMatches(type = 'live') {
     }
     
     // Timer intervals
-    if (status === 'live' || status === 'coming_soon') {  
-      intervals.push(setInterval(() => {  
-        const now = getNow();
-        const matchTime = new Date(m.MatchTime);
-        const cdEl = div.querySelector(`#cd${type}${i}`);  
+if (status === 'live' || status === 'coming_soon') {  
+  intervals.push(setInterval(() => {  
+    const now = getNow();
+    const matchTime = new Date(m.MatchTime);
+    const cdEl = div.querySelector(`#cd${type}${i}`);  
+    
+    if (cdEl) {  
+      const diffLive = now - matchTime;  
+      cdEl.innerText = formatCountUp(Math.abs(diffLive));  
+    }
+    
+    // Check if match transitions from coming soon to live
+    if (now >= matchTime && status === 'coming_soon') {
+      const comingSoonContainer = div.querySelector(`#comingSoonAnim${i}`);
+      
+      if (comingSoonContainer) {
+        comingSoonContainer.innerHTML = '';
+        comingSoonContainer.id = `liveAnim${i}`;
         
-        if (cdEl) {  
-          const diffLive = now - matchTime;  
-          cdEl.innerText = formatCountUp(Math.abs(diffLive));  
-        }
+        bodymovin.loadAnimation({  
+          container: comingSoonContainer,  
+          renderer: 'svg',  
+          loop: true,  
+          autoplay: true,  
+          path: 'https://raw.githubusercontent.com/Hasanmahmud000/HasanTv/refs/heads/main/live-icon.json'  
+        });
         
-        // Check if match transitions from coming soon to live
-        if (now >= matchTime && status === 'coming_soon') {
-          const comingSoonContainer = div.querySelector(`#comingSoonAnim${i}`);
-          
-          if (comingSoonContainer) {
-            comingSoonContainer.innerHTML = '';
-            comingSoonContainer.id = `liveAnim${i}`;
-            
-            bodymovin.loadAnimation({  
-              container: comingSoonContainer,  
-              renderer: 'svg',  
-              loop: true,  
-              autoplay: true,  
-              path: 'https://raw.githubusercontent.com/Hasanmahmud000/HasanTv/refs/heads/main/live-icon.json'  
-            });
-            
-            comingSoonContainer.style.transition = 'all 0.5s ease';
-            comingSoonContainer.style.transform = 'scale(1.1)';
-            setTimeout(() => {
-              comingSoonContainer.style.transform = 'scale(1)';
-            }, 500);
-          }
-        }
-        
-        // Check if match has ended
-        const endTime = new Date(matchTime.getTime() + (duration * 60 * 1000));
-        if (now >= endTime && (status === 'live' || status === 'coming_soon')) {
-          // Refresh to show in finished category
-          setTimeout(() => {
-            renderMatches('finished'); // Automatically switch to Finished tab
-          }, 1000);
-        }
-      }, 1000));  
-    } else if (type === 'today') {  
+        comingSoonContainer.style.transition = 'all 0.5s ease';
+        comingSoonContainer.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          comingSoonContainer.style.transform = 'scale(1)';
+        }, 500);
+      }
+    }
+    
+    // Check if match has ended
+const endTime = new Date(matchTime.getTime() + (duration * 60 * 1000));
+if (now >= endTime && (status === 'live' || status === 'coming_soon')) {
+  // Automatically switch to Finished tab
+  setTimeout(() => {
+    showCategory('finished'); // Automatically switch to Finished tab
+  }, 1000);
+}
+  }, 1000));  
+} else if (type === 'today') {  
       intervals.push(setInterval(() => {  
         const cdEl = div.querySelector(`#cd${type}${i}`);  
         if (cdEl) {  
@@ -1277,10 +1283,10 @@ fetch(matchesApi)
   });
 
   // Update tab counts
-  document.getElementById("countLive").innerText = `(${liveCount})`;  
-  document.getElementById("countToday").innerText = `(${todayCount})`;  
-  document.getElementById("countUpcoming").innerText = `(${upcomingCount})`;
-  document.getElementById("countFinished").innerText = `(${finishedCount})`;
+document.getElementById("countLive").innerText = `(${liveCount})`;  
+document.getElementById("countToday").innerText = `(${todayCount})`;  
+document.getElementById("countUpcoming").innerText = `(${upcomingCount})`;
+document.getElementById("countFinished").innerText = `(${finishedCount})`;
 
   // Smart tab selection
   if (liveCount > 0) {
