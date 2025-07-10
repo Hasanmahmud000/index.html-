@@ -322,17 +322,17 @@
  /* Modified sub-tab styles */
 .sub-tab-btns {
   display: flex;
-  justify-content: center; /* মাঝখানে সাজানোর মূল ম্যাজিক */
-  gap: 8px;
+  justify-content: space-around; /* Distribute space evenly */
   padding: 10px;
   background: #222;
-  flex-wrap: wrap; /* মোবাইল ফ্রেন্ডলি */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 .sub-tab-btns button {
-  flex: 1; /* সমান প্রস্থ */
-  min-width: 88px; /* মিনিমাম সাইজ */
-  max-width: 120px; /* ম্যাক্সিমাম সাইজ */
+  flex: 1; /* Equal width for buttons */
+  min-width: 85.5px; /* Minimum width for buttons */
+  max-width: 120px; /* Maximum width for buttons */
   padding: 8px 5px;
   border: none;
   border-radius: 20px;
@@ -341,7 +341,7 @@
   font-weight: 600;
   font-size: 14px;
   text-align: center;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden;
   text-overflow: ellipsis;
   transition: all 0.3s ease;
@@ -698,10 +698,10 @@
 
 <!-- Sub-tabs only visible in Live Category -->
 <div id="subTabs" class="sub-tab-btns" style="display:none;">
-  <button id="subLive" class="active">Live <span id="countLive"></span></button>
-  <button id="subToday">Today <span id="countToday"></span></button>
-  <button id="subUpcoming">Upcoming <span id="countUpcoming"></span></button>
-  <button id="subFinished">Finished <span id="countFinished"></span></button>
+  <button id="subLive" class="active">Live <span id="countLive">(0)</span></button>
+  <button id="subToday">Today <span id="countToday">(0)</span></button>
+  <button id="subUpcoming">Upcoming <span id="countUpcoming">(0)</span></button>
+  <button id="subFinished">Finished <span id="countFinished">(0)</span></button>
 </div>
 
 <div id="match-list"></div>
@@ -881,18 +881,21 @@ function clearIntervals() {
 function getNow() { return new Date(); }  
 function getCountdown(t) { return Math.max(0, new Date(t) - getNow()); }  
 
-// নতুন ফরম্যাট ফাংশন - ঘন্টা:মিনিট:সেকেন্ড (1:5:30 format)
+// নতুন ফরম্যাট ফাংশন - স্মার্ট টাইমার (সেকেন্ড -> মিনিট -> ঘন্টা)
 function formatTime(ms) {
-  let s = Math.floor(ms / 1000);
-  let m = Math.floor(s / 60);
-  let h = Math.floor(m / 60);
+  let totalSeconds = Math.floor(ms / 1000);
+  let hours = Math.floor(totalSeconds / 3600);
+  let minutes = Math.floor((totalSeconds % 3600) / 60);
+  let seconds = totalSeconds % 60;
   
-  h = h % 24;
-  m = m % 60;
-  s = s % 60;
-  
-  // Remove leading zeros - show 1:5:30 instead of 01:05:30
-  return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  // স্মার্ট ডিসপ্লে: শুধু সেকেন্ড -> মিনিট:সেকেন্ড -> ঘন্টা:মিনিট:সেকেন্ড
+  if (hours > 0) {
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  } else if (minutes > 0) {
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  } else {
+    return `${seconds}`;
+  }
 }
 
 function formatCountdown(ms) {
@@ -1023,18 +1026,9 @@ function renderMatches(type = 'live') {
     
     let statusContent = '';
     let leftContent = '';
-    let matchHeaderContent = '';
     
-    // Match header with custom logo support
-    if (m.Team1Logo && m.Team2Logo) {
-      matchHeaderContent = `
-        <img src="${m.Team1Logo}" alt="${m.Team1}" class="match-title-logo" />
-        <span>${m.Match}</span>
-        <img src="${m.Team2Logo}" alt="${m.Team2}" class="match-title-logo" />
-      `;
-    } else {
-      matchHeaderContent = m.Match;
-    }
+    // Match header without logo - শুধু টেক্সট
+    const matchHeaderContent = m.Match;
     
     if (status === 'live') {
       leftContent = `<div class="live-timer" id="cd${type}${i}"></div>`;
@@ -1257,7 +1251,7 @@ fetch(matchesApi)
   matches = data.matches || [];  
 
   const now = new Date();  
-  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());  
+  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const todayEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);  
 
   // Count matches by status
@@ -1283,10 +1277,10 @@ fetch(matchesApi)
   });
 
   // Update tab counts
-  document.getElementById("countLive").innerText = `(${liveCount})`;  
-  document.getElementById("countToday").innerText = `(${todayCount})`;  
-  document.getElementById("countUpcoming").innerText = `(${upcomingCount})`;
-  document.getElementById("countFinished").innerText = `(${finishedCount})`;
+document.getElementById("countLive").innerText = `(${liveCount})`;  
+document.getElementById("countToday").innerText = `(${todayCount})`;  
+document.getElementById("countUpcoming").innerText = `(${upcomingCount})`;
+document.getElementById("countFinished").innerText = `(${finishedCount})`;
 
   // Smart tab selection
   if (liveCount > 0) {
